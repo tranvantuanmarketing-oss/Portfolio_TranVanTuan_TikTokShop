@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trần Văn Tuấn · TikTok Shop Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --r: #FE2C55;
+  --c: #25F4EE;
+  --b: #010101;
+  --d: #0f0f0f;
+  --card: #181818;
+  --card2: #1f1f1f;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.04);
+  --t1: #ffffff;
+  --t2: rgba(255,255,255,0.65);
+  --t3: rgba(255,255,255,0.35);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: var(--b);
+  color: var(--t1);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 60px;
+  background: rgba(1,1,1,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-weight: 900; font-size: 15px; letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--r), var(--c));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--t2); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--c); }
+
+/* SECTIONS */
+section { padding: 100px 5vw 80px; max-width: 1100px; margin: 0 auto; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-top: 120px; padding-bottom: 60px;
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0;
+}
+.hero-glow.g1 { width: 500px; height: 500px; top: -100px; right: -100px; background: rgba(254,44,85,.18); }
+.hero-glow.g2 { width: 400px; height: 400px; bottom: 0; left: -80px; background: rgba(37,244,238,.12); }
+.hero-inner { position: relative; z-index: 1; }
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(37,244,238,.4); border-radius: 100px;
+  padding: 6px 16px; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--c);
+  margin-bottom: 24px;
+}
+.hero-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--c); animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.7)} }
+
+h1.hero-name {
+  font-size: clamp(42px, 7vw, 90px);
+  font-weight: 900; line-height: 1.0; letter-spacing: -3px; margin-bottom: 8px;
+}
+.hero-name .white { color: var(--t1); }
+.hero-name .red { color: var(--r); }
+.hero-name .cyan { color: var(--c); }
+
+.hero-sub {
+  font-size: clamp(14px, 2vw, 18px); color: var(--t2); font-weight: 400;
+  margin-bottom: 32px; max-width: 600px;
+}
+.hero-sub strong { color: var(--t1); font-weight: 700; }
+
+/* BIG 3 */
+.big3 {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border); border-radius: 16px; overflow: hidden;
+  margin-bottom: 40px; border: 1px solid var(--border);
+  max-width: 620px;
+}
+.big3-item {
+  background: var(--card); padding: 22px 24px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.big3-item .num {
+  font-size: 28px; font-weight: 900; letter-spacing: -1px;
+}
+.big3-item .num.r { color: var(--r); }
+.big3-item .num.c { color: var(--c); }
+.big3-item .num.w { color: #fff; }
+.big3-item .lbl {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--t3);
+}
+
+.hero-note {
+  font-size: 11px; color: var(--t3); font-style: italic;
+  padding-left: 16px; border-left: 2px solid rgba(37,244,238,.3);
+  margin-bottom: 32px;
+}
+
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 100px;
+  font-size: 13px; font-weight: 700; letter-spacing: .5px;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: transform .15s, opacity .15s;
+}
+.btn:hover { transform: translateY(-1px); opacity: .9; }
+.btn-primary { background: var(--r); color: #fff; }
+.btn-outline {
+  background: transparent; color: var(--c);
+  border: 1px solid rgba(37,244,238,.4);
+}
+
+/* SECTION HEADERS */
+.s-header { margin-bottom: 48px; }
+.s-tag {
+  font-size: 10px; font-weight: 800; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--r); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.s-tag::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--r); }
+.s-title { font-size: clamp(26px, 4vw, 40px); font-weight: 900; letter-spacing: -1px; line-height: 1.15; }
+.s-desc { font-size: 14px; color: var(--t2); margin-top: 10px; max-width: 560px; }
+
+/* ── PROCESS ── */
+#process { background: none; }
+.process-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  position: relative;
+}
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 44px; left: calc(12.5% + 24px); right: calc(12.5% + 24px); height: 2px;
+  background: linear-gradient(90deg, var(--r), var(--c));
+  z-index: 0;
+}
+.step-card {
+  padding: 0 12px; position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 900; margin-bottom: 20px;
+  position: relative;
+}
+.step-num.s1 { background: var(--r); color: #fff; box-shadow: 0 0 24px rgba(254,44,85,.4); }
+.step-num.s2 { background: var(--card2); color: var(--c); border: 2px solid var(--c); }
+.step-num.s3 { background: var(--card2); color: var(--c); border: 2px solid var(--c); }
+.step-num.s4 { background: var(--c); color: var(--b); box-shadow: 0 0 24px rgba(37,244,238,.4); }
+
+.step-body {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 20px 16px; width: 100%;
+}
+.step-title { font-size: 13px; font-weight: 800; margin-bottom: 8px; color: var(--t1); }
+.step-tools {
+  display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 10px;
+}
+.tool-pill {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 100px;
+}
+.tp-r { background: rgba(254,44,85,.15); color: var(--r); border: 1px solid rgba(254,44,85,.3); }
+.tp-c { background: rgba(37,244,238,.10); color: var(--c); border: 1px solid rgba(37,244,238,.25); }
+.tp-w { background: rgba(255,255,255,.07); color: var(--t2); border: 1px solid var(--border); }
+.step-desc { font-size: 11px; color: var(--t2); line-height: 1.55; }
+
+/* ── CASE STUDIES ── */
+.case-study-wrap { display: flex; flex-direction: column; gap: 24px; }
+.cs-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; overflow: hidden;
+}
+.cs-head {
+  display: flex; align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+.cs-accent-bar { width: 5px; background: linear-gradient(180deg, var(--r), var(--c)); flex-shrink: 0; }
+.cs-head-content { padding: 24px 28px; flex: 1; }
+.cs-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--t3); margin-bottom: 6px;
+}
+.cs-title { font-size: 18px; font-weight: 900; margin-bottom: 4px; }
+.cs-period { font-size: 11px; color: var(--t3); }
+.cs-body { padding: 24px 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.cs-col-title {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--t3); margin-bottom: 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.cs-list { list-style: none; }
+.cs-list li {
+  font-size: 12px; color: var(--t2); padding-left: 14px;
+  position: relative; margin-bottom: 7px; line-height: 1.5;
+}
+.cs-list li::before {
+  content: '▸'; position: absolute; left: 0; top: 1px;
+  color: var(--c); font-size: 9px;
+}
+.cs-list li strong { color: var(--t1); font-weight: 700; }
+
+.cs-results {
+  padding: 20px 28px; background: rgba(254,44,85,.04);
+  border-top: 1px solid rgba(254,44,85,.15);
+  display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
+}
+.result-stat { display: flex; flex-direction: column; }
+.result-num { font-size: 26px; font-weight: 900; letter-spacing: -1px; line-height: 1; }
+.result-num.r { color: var(--r); }
+.result-num.c { color: var(--c); }
+.result-lbl { font-size: 10px; color: var(--t3); font-weight: 600; letter-spacing: .5px; margin-top: 2px; }
+.result-note { font-size: 11px; color: var(--t3); font-style: italic; margin-left: auto; text-align: right; }
+
+/* ── CHART SECTION ── */
+.chart-wrap {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 28px;
+}
+.chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+.chart-title { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+.chart-sub { font-size: 12px; color: var(--t3); }
+.legend-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--t2); }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+/* ── SKILLS GALLERY ── */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.skill-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px; position: relative; overflow: hidden;
+}
+.skill-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(254,44,85,.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.skill-card-icon {
+  width: 44px; height: 44px; border-radius: 12px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.ic-r { background: rgba(254,44,85,.15); }
+.ic-c { background: rgba(37,244,238,.1); }
+.skill-card-title { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+.skill-card-sub { font-size: 12px; color: var(--t2); margin-bottom: 14px; line-height: 1.55; }
+
+.metric-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+.mini-stat {
+  flex: 1; min-width: 80px; background: rgba(255,255,255,.04);
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
+}
+.mini-stat .mn { font-size: 18px; font-weight: 900; }
+.mn.r { color: var(--r); }
+.mn.c { color: var(--c); }
+.mini-stat .ml { font-size: 9px; color: var(--t3); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+/* PROMPT BLOCK */
+.prompt-block {
+  background: var(--b); border: 1px solid rgba(37,244,238,.2);
+  border-radius: 10px; padding: 14px 16px; margin-top: 14px;
+  font-family: 'Be Vietnam Pro', monospace;
+}
+.pb-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--c); margin-bottom: 8px; }
+.pb-text { font-size: 11px; color: rgba(255,255,255,.7); line-height: 1.6; }
+.pb-text em { color: var(--c); font-style: normal; }
+
+/* VIDEO AI MOCKUP */
+.video-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 14px; }
+.vid-mock {
+  border-radius: 12px; overflow: hidden; position: relative;
+  aspect-ratio: 9/14; background: var(--b); border: 1px solid var(--border);
+}
+.vid-thumb {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1a0a0e, #0d1a1a);
+}
+.vid-thumb .play-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--r); display: flex; align-items: center; justify-content: center;
+}
+.play-icon { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 12px solid #fff; margin-left: 3px; }
+.vid-views { font-size: 10px; font-weight: 800; color: var(--t2); }
+.vid-badge {
+  position: absolute; bottom: 8px; left: 6px; right: 6px;
+  background: rgba(0,0,0,.7); border-radius: 6px; padding: 4px 7px;
+  font-size: 9px; color: var(--c); font-weight: 700; text-align: center;
+}
+
+/* ── LEADERSHIP ── */
+.leader-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.flow-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px;
+}
+.flow-title { font-size: 13px; font-weight: 800; margin-bottom: 20px; color: var(--t1); }
+.flow-step {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
+}
+.flow-step:last-child { margin-bottom: 0; }
+.flow-dot {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800;
+}
+.fd-r { background: rgba(254,44,85,.15); color: var(--r); border: 1px solid rgba(254,44,85,.3); }
+.fd-c { background: rgba(37,244,238,.1); color: var(--c); border: 1px solid rgba(37,244,238,.25); }
+.fd-w { background: rgba(255,255,255,.06); color: var(--t2); border: 1px solid var(--border); }
+.flow-info { flex: 1; }
+.flow-info strong { font-size: 12px; font-weight: 800; display: block; margin-bottom: 2px; }
+.flow-info span { font-size: 11px; color: var(--t2); line-height: 1.5; }
+
+.connector { width: 1px; height: 12px; background: var(--border); margin: 0 0 0 16px; margin-bottom: 4px; }
+
+.result-card {
+  background: linear-gradient(135deg, rgba(254,44,85,.08), rgba(37,244,238,.05));
+  border: 1px solid rgba(254,44,85,.2); border-radius: 16px; padding: 24px;
+}
+.rc-kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.kpi-box {
+  background: rgba(0,0,0,.35); border-radius: 12px; padding: 16px;
+  border: 1px solid rgba(255,255,255,.06);
+}
+.kpi-num { font-size: 24px; font-weight: 900; letter-spacing: -1px; margin-bottom: 2px; }
+.kpi-num.r { color: var(--r); }
+.kpi-num.c { color: var(--c); }
+.kpi-lbl { font-size: 9px; color: var(--t3); text-transform: uppercase; letter-spacing: 1.2px; }
+
+/* TRANSPARENCY NOTE */
+.transparency {
+  margin-top: 20px;
+  background: rgba(37,244,238,.05); border: 1px solid rgba(37,244,238,.15);
+  border-radius: 10px; padding: 12px 16px;
+  font-size: 11px; color: rgba(37,244,238,.8);
+  display: flex; gap: 10px; align-items: flex-start;
+}
+
+/* FOOTER */
+footer {
+  background: var(--card); border-top: 1px solid var(--border);
+  padding: 40px 5vw; text-align: center;
+  margin-top: 60px;
+}
+.footer-name {
+  font-size: 24px; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 6px;
+  background: linear-gradient(90deg, var(--r), var(--c));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.footer-sub { font-size: 12px; color: var(--t3); margin-bottom: 20px; }
+.footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--t2); text-decoration: none; font-weight: 600; }
+.footer-links a:hover { color: var(--c); }
+.footer-note { font-size: 10px; color: var(--t3); margin-top: 24px; }
+
+/* DIVIDER */
+.section-divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0 auto;
+}
+/* helpers */
+.text-r { color: var(--r); } .text-c { color: var(--c); }
+.fw9 { font-weight: 900; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">♪ TVT · PORTFOLIO</div>
+  <div class="nav-links">
+    <a href="#process">Quy Trình</a>
+    <a href="#casestudy">Case Study</a>
+    <a href="#skills">Skills</a>
+    <a href="#leadership">Leadership</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="hero-inner">
+    <div class="hero-tag"><span></span> Available for new opportunities</div>
+
+    <h1 class="hero-name">
+      <span class="white">Trần</span><br>
+      <span class="red">Văn</span> <span class="cyan">Tuấn</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>TikTok Shop Seller · AI-Powered Content Creator · POD Operator</strong><br>
+      Seller có tư duy <strong>Idea & Tech-Driven</strong> — biến AI thành lợi thế cạnh tranh trên thị trường Mỹ.
+    </p>
+
+    <div class="big3">
+      <div class="big3-item">
+        <span class="num r">$264K</span>
+        <span class="lbl">Revenue · 6 Tháng</span>
+      </div>
+      <div class="big3-item">
+        <span class="num c">AI Video</span>
+        <span class="lbl">Expert · Kling · MJ</span>
+      </div>
+      <div class="big3-item">
+        <span class="num w">Profit</span>
+        <span class="lbl">Driven · ROI 4x</span>
+      </div>
+    </div>
+
+    <p class="hero-note">
+      ✦ Dữ liệu thực tế từ tài khoản Seller Center — có thể đối soát khi phỏng vấn.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:vantuanagency@gmail.com">Liên hệ ngay</a>
+      <a class="btn btn-outline" href="#casestudy">Xem Case Study ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+<section id="process">
+  <div class="s-header">
+    <div class="s-tag">Quy Trình Làm Việc</div>
+    <h2 class="s-title">AI-Powered Workflow</h2>
+    <p class="s-desc">Không chỉ làm theo bản năng — mỗi đơn hàng đều đi qua một quy trình tối ưu, ứng dụng AI tại mọi khâu.</p>
+  </div>
+
+  <div class="process-grid">
+    <div class="step-card">
+      <div class="step-num s1">01</div>
+      <div class="step-body">
+        <div class="step-title">Research & Trend</div>
+        <div class="step-tools">
+          <span class="tool-pill tp-r">TikTok Creative</span>
+          <span class="tool-pill tp-w">Spy Tools</span>
+          <span class="tool-pill tp-c">Seller Center</span>
+        </div>
+        <div class="step-desc">Phân tích trending hashtags, xem xét competitor ads, đánh giá demand thị trường Mỹ qua TikTok Shop US dashboard.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num s2">02</div>
+      <div class="step-body">
+        <div class="step-title">Idea & Visual AI</div>
+        <div class="step-tools">
+          <span class="tool-pill tp-c">Midjourney</span>
+          <span class="tool-pill tp-r">ChatGPT</span>
+          <span class="tool-pill tp-w">Canva AI</span>
+        </div>
+        <div class="step-desc">Dùng Midjourney gen ảnh mockup sản phẩm POD độc bản. ChatGPT viết copy & tối ưu listing. Canva tạo banner gian hàng.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num s3">03</div>
+      <div class="step-body">
+        <div class="step-title">AI Content Video</div>
+        <div class="step-tools">
+          <span class="tool-pill tp-r">Kling AI</span>
+          <span class="tool-pill tp-c">CapCut</span>
+          <span class="tool-pill tp-w">ElevenLabs</span>
+        </div>
+        <div class="step-desc">Kling AI biến ảnh tĩnh thành video viral. ElevenLabs gen voiceover chuẩn giọng Mỹ. CapCut mix sub, hiệu ứng, hook 3 giây đầu.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num s4">04</div>
+      <div class="step-body">
+        <div class="step-title">Optimize & Scale</div>
+        <div class="step-tools">
+          <span class="tool-pill tp-c">TikTok Ads</span>
+          <span class="tool-pill tp-r">A/B Test</span>
+          <span class="tool-pill tp-w">Analytics</span>
+        </div>
+        <div class="step-desc">A/B test creative, tối ưu CPA $4–6, CTR 2.5–3.5%. Scale budget khi ROAS ổn định. Livestream hỗ trợ chốt đơn cuối phễu.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ CASE STUDIES ═══════════════════════ -->
+<section id="casestudy">
+  <div class="s-header">
+    <div class="s-tag">Dự Án Tiêu Biểu</div>
+    <h2 class="s-title">Case Study Thực Chiến</h2>
+    <p class="s-desc">Phân tích chi tiết theo mô hình S-T-A-R từ các dự án thực tế đã triển khai.</p>
+  </div>
+
+  <div class="case-study-wrap">
+
+    <!-- CASE 1 -->
+    <div class="cs-card">
+      <div class="cs-head">
+        <div class="cs-accent-bar"></div>
+        <div class="cs-head-content">
+          <div class="cs-label">Case Study 01 · G-Way Holdings</div>
+          <div class="cs-title">Leader Team POD — TikTok Shop US</div>
+          <div class="cs-period">03/2025 – 09/2025 · Đà Nẵng & Hà Nội</div>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div>
+          <div class="cs-col-title">📍 Situation & Task</div>
+          <ul class="cs-list">
+            <li>Thị trường POD Mỹ <strong>cạnh tranh tăng vọt</strong> sau TikTok ban hàng loạt acc 2024.</li>
+            <li>Chi phí Ads leo thang, CPA trung bình ngành lên $8–12.</li>
+            <li>Nhiệm vụ: <strong>Scale doanh thu team</strong> từ zero, xây quy trình chuẩn hóa cho TTS mới.</li>
+            <li>Yêu cầu: ROI tối thiểu 3x, Ads cost dưới 30% revenue.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="cs-col-title">⚡ Action</div>
+          <ul class="cs-list">
+            <li>Nghiên cứu <strong>ngách mới</strong>: Pet memorial, Couple custom, Patriotic niches.</li>
+            <li>Ứng dụng <strong>Kling AI + Midjourney</strong> giảm chi phí content 70% so với thuê video editor.</li>
+            <li>Xây dựng <strong>SOP 5 bước</strong> cho TTS: Research → Design → Upload → Ads → Optimize.</li>
+            <li>Tối ưu <strong>TikTok Shop phễu</strong>: affiliate + ads + livestream phối hợp.</li>
+            <li>Đào tạo team 4+ TTS, set KPI rõ ràng theo tuần.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="cs-col-title">🏆 Result</div>
+          <ul class="cs-list">
+            <li>Doanh thu <strong class="text-c">$264,000 USD / 6 tháng</strong> (~6.6 tỷ VNĐ).</li>
+            <li>ROI duy trì <strong class="text-r">3.3 – 4.0x</strong> ổn định.</li>
+            <li>Ads cost <strong>25–30%</strong> revenue (dưới mục tiêu 30%).</li>
+            <li>Team TTS độc lập vận hành sau 6 tuần đào tạo.</li>
+            <li>Bàn giao SOP hoàn chỉnh cho Leader mới tiếp quản.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cs-results">
+        <div class="result-stat">
+          <span class="result-num r">$264K</span>
+          <span class="result-lbl">Tổng Doanh Thu</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num c">4.0x</span>
+          <span class="result-lbl">ROI Đỉnh</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num r">6 Tháng</span>
+          <span class="result-lbl">Thời Gian</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num c">~25%</span>
+          <span class="result-lbl">Ads Cost / Rev</span>
+        </div>
+        <div class="result-note">✦ Dữ liệu từ TikTok Seller Center<br>— đối soát được khi phỏng vấn</div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="cs-card">
+      <div class="cs-head">
+        <div class="cs-accent-bar" style="background:linear-gradient(180deg,var(--c),var(--r))"></div>
+        <div class="cs-head-content">
+          <div class="cs-label">Case Study 02 · Vinazon · Stronger Team</div>
+          <div class="cs-title">Seller TikTok Shop US — Idea, Ads & Livestream</div>
+          <div class="cs-period">10/2025 – 03/2026 · Đà Nẵng</div>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div>
+          <div class="cs-col-title">📍 Situation & Task</div>
+          <ul class="cs-list">
+            <li>Giai đoạn thử việc áp lực — cần <strong>chứng minh năng lực</strong> ngay từ tháng đầu.</li>
+            <li>Thị trường TikTok Shop US cạnh tranh gay gắt ở segment $20–35.</li>
+            <li>Nhiệm vụ: Solo vận hành idea, ads, livestream & đào tạo TTS cùng lúc.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="cs-col-title">⚡ Action</div>
+          <ul class="cs-list">
+            <li><strong>100% AI content</strong>: Gen ảnh Midjourney → animate Kling AI → upload trong cùng ngày.</li>
+            <li>Setup tài khoản TikTok Shop US chính chủ, tối ưu listing SEO-friendly.</li>
+            <li>Triển khai <strong>Livestream</strong> kết hợp Ads để đẩy conversion cuối phễu.</li>
+            <li>Đào tạo TTS song song — không để bottleneck vận hành.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="cs-col-title">🏆 Result</div>
+          <ul class="cs-list">
+            <li>Tháng thử việc 1–2: Profit cá nhân <strong class="text-r">$1,500/tháng</strong>.</li>
+            <li>Từ tháng 3+: Profit ổn định <strong class="text-c">$2,500+/tháng</strong>.</li>
+            <li>Video AI đạt <strong>200K–500K views</strong>, có video vượt <strong class="text-r">1M views</strong>.</li>
+            <li>CTR ads duy trì <strong>2.5–3.5%</strong>, CR <strong>3–5%</strong>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cs-results">
+        <div class="result-stat">
+          <span class="result-num c">$2,500+</span>
+          <span class="result-lbl">Profit / Tháng</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num r">1M+</span>
+          <span class="result-lbl">Views / Video</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num c">3.5%</span>
+          <span class="result-lbl">CTR Ads</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num r">$4–6</span>
+          <span class="result-lbl">CPA Target</span>
+        </div>
+        <div class="result-note">✦ AI Content: 0 USD production cost<br>vs $300–500 thuê video editor</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REVENUE CHART -->
+  <div class="chart-wrap" style="margin-top:24px">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Tăng trưởng Doanh Thu & Profit</div>
+        <div class="chart-sub">Dữ liệu tổng hợp từ các giai đoạn vận hành · USD</div>
+      </div>
+      <div class="legend-row">
+        <div class="legend-item"><div class="legend-dot" style="background:#FE2C55"></div> Doanh Thu</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#25F4EE"></div> Profit</div>
+      </div>
+    </div>
+    <div style="position:relative; width:100%; height:260px;">
+      <canvas id="revChart" role="img" aria-label="Biểu đồ tăng trưởng doanh thu và profit theo tháng">Dữ liệu doanh thu tăng trưởng từ $15K lên $55K, profit từ $3K lên $20K.</canvas>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ SKILLS GALLERY ═══════════════════════ -->
+<section id="skills">
+  <div class="s-header">
+    <div class="s-tag">Skills Gallery</div>
+    <h2 class="s-title">Năng Lực & Công Nghệ</h2>
+    <p class="s-desc">Từ AI Content đến Ads Optimization — không outsource, tự cân toàn bộ.</p>
+  </div>
+
+  <div class="skills-grid">
+
+    <!-- AI VIDEO -->
+    <div class="skill-card">
+      <div class="skill-card-icon ic-r">🎬</div>
+      <div class="skill-card-title">AI Video Content</div>
+      <div class="skill-card-sub">
+        Sử dụng Kling AI & Midjourney để tạo video viral TikTok 100% bằng AI — không cần quay, không cần diễn viên, không cần studio. Tiết kiệm 70% chi phí production so với thuê editor.
+      </div>
+      <div class="video-row">
+        <div class="vid-mock">
+          <div class="vid-thumb">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <div class="vid-views">1.2M views</div>
+          </div>
+          <div class="vid-badge">100% AI Generated</div>
+        </div>
+        <div class="vid-mock">
+          <div class="vid-thumb" style="background:linear-gradient(135deg,#0d1a0d,#0d0d1a)">
+            <div class="play-btn" style="background:var(--c)"><div class="play-icon" style="border-left-color:#000"></div></div>
+            <div class="vid-views">487K views</div>
+          </div>
+          <div class="vid-badge">CTR 3.8%</div>
+        </div>
+        <div class="vid-mock">
+          <div class="vid-thumb" style="background:linear-gradient(135deg,#1a1a0d,#0a0a0a)">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <div class="vid-views">256K views</div>
+          </div>
+          <div class="vid-badge">Kling AI Motion</div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="mini-stat"><div class="mn r">1M+</div><div class="ml">Peak Views</div></div>
+        <div class="mini-stat"><div class="mn c">$0</div><div class="ml">Production Cost</div></div>
+        <div class="mini-stat"><div class="mn r">3.8%</div><div class="ml">CTR Max</div></div>
+      </div>
+    </div>
+
+    <!-- PROMPTS -->
+    <div class="skill-card">
+      <div class="skill-card-icon ic-c">🤖</div>
+      <div class="skill-card-title">AI Mastery & Prompting</div>
+      <div class="skill-card-sub">
+        Thành thạo ChatGPT, Gemini, Claude, Flow, Midjourney — không chỉ dùng cơ bản mà master prompt engineering để tối ưu output cho từng ngách sản phẩm.
+      </div>
+      <div class="prompt-block">
+        <div class="pb-label">Sample Prompt · Midjourney POD</div>
+        <div class="pb-text">"<em>A cozy autumn custom family portrait</em> on a premium <em>canvas tote bag</em>, watercolor style, warm orange palette, white background for mockup, hyper-realistic fabric texture, TikTok Shop US hero shot, 8k"</div>
+      </div>
+      <div class="prompt-block" style="margin-top:8px">
+        <div class="pb-label">Sample Prompt · Kling AI Video</div>
+        <div class="pb-text">"<em>Product showcase zoom-in</em>, soft cinematic lighting, gentle rotation 360°, lifestyle background blur, viral TikTok hook style, <em>first 3 seconds pattern interrupt</em>"</div>
+      </div>
+      <div class="metric-row">
+        <div class="mini-stat"><div class="mn c">6+</div><div class="ml">AI Tools</div></div>
+        <div class="mini-stat"><div class="mn r">-70%</div><div class="ml">Content Cost</div></div>
+        <div class="mini-stat"><div class="mn c">2x</div><div class="ml">Speed</div></div>
+      </div>
+    </div>
+
+    <!-- ADS -->
+    <div class="skill-card">
+      <div class="skill-card-icon ic-r">🎯</div>
+      <div class="skill-card-title">TikTok & Facebook Ads</div>
+      <div class="skill-card-sub">
+        3+ năm chạy ads thực chiến. Từ Facebook Ads cho thị trường nội địa đến TikTok Ads Mỹ — hiểu sâu về phễu chuyển đổi, audience targeting, và tối ưu chi phí theo từng giai đoạn.
+      </div>
+      <div style="margin-top:14px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+              <span style="font-size:11px;color:var(--t2)">TikTok Ads CTR</span>
+              <span style="font-size:11px;font-weight:800;color:var(--c)">3.5% (target: 2%)</span>
+            </div>
+            <div style="background:rgba(255,255,255,.07);border-radius:100px;height:5px;overflow:hidden">
+              <div style="width:87%;height:100%;background:linear-gradient(90deg,var(--c),rgba(37,244,238,.4));border-radius:100px"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+              <span style="font-size:11px;color:var(--t2)">Conversion Rate</span>
+              <span style="font-size:11px;font-weight:800;color:var(--r)">5% (target: 3%)</span>
+            </div>
+            <div style="background:rgba(255,255,255,.07);border-radius:100px;height:5px;overflow:hidden">
+              <div style="width:83%;height:100%;background:linear-gradient(90deg,var(--r),rgba(254,44,85,.4));border-radius:100px"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+              <span style="font-size:11px;color:var(--t2)">ROI Consistency</span>
+              <span style="font-size:11px;font-weight:800;color:var(--c)">3.3–4.0x</span>
+            </div>
+            <div style="background:rgba(255,255,255,.07);border-radius:100px;height:5px;overflow:hidden">
+              <div style="width:95%;height:100%;background:linear-gradient(90deg,var(--c),var(--r));border-radius:100px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="mini-stat"><div class="mn r">$50M+</div><div class="ml">VNĐ Managed</div></div>
+        <div class="mini-stat"><div class="mn c">$2K+</div><div class="ml">USD Budget/Mo</div></div>
+        <div class="mini-stat"><div class="mn r">3Y+</div><div class="ml">Kinh Nghiệm</div></div>
+      </div>
+    </div>
+
+    <!-- POD OPS -->
+    <div class="skill-card">
+      <div class="skill-card-icon ic-c">📦</div>
+      <div class="skill-card-title">POD Operations · U.S. Market</div>
+      <div class="skill-card-sub">
+        Vận hành full-stack Print On Demand: từ nghiên cứu sản phẩm, thiết kế, kết nối fulfillment partner đến tối ưu listing và quảng cáo. 12,000+ đơn trong 1 năm.
+      </div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:11px">
+          <div style="color:var(--t3);margin-bottom:4px;font-size:9px;text-transform:uppercase;letter-spacing:1px">Niche thành công</div>
+          <div style="color:var(--c);font-weight:700">Pet Memorial</div>
+          <div style="color:var(--c);font-weight:700">Couple Custom</div>
+          <div style="color:var(--c);font-weight:700">Patriotic USA</div>
+          <div style="color:var(--c);font-weight:700">Family Portrait</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:11px">
+          <div style="color:var(--t3);margin-bottom:4px;font-size:9px;text-transform:uppercase;letter-spacing:1px">Fulfillment Stack</div>
+          <div style="color:var(--t2);font-weight:600">Printify / Printful</div>
+          <div style="color:var(--t2);font-weight:600">TikTok Shop API</div>
+          <div style="color:var(--t2);font-weight:600">Auto-fulfill SOP</div>
+          <div style="color:var(--t2);font-weight:600">CS Template bank</div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="mini-stat"><div class="mn c">12K</div><div class="ml">Orders / Năm</div></div>
+        <div class="mini-stat"><div class="mn r">$240K</div><div class="ml">Annual Rev</div></div>
+        <div class="mini-stat"><div class="mn c">$20</div><div class="ml">AOV</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ LEADERSHIP ═══════════════════════ -->
+<section id="leadership">
+  <div class="s-header">
+    <div class="s-tag">Quản Lý & Đào Tạo</div>
+    <h2 class="s-title">Leadership & Team Building</h2>
+    <p class="s-desc">Không chỉ tự mình làm giỏi — xây được hệ thống để team cũng làm được.</p>
+  </div>
+
+  <div class="leader-grid">
+    <!-- FLOW -->
+    <div class="flow-card">
+      <div class="flow-title">SOP Đào Tạo TTS TikTok Shop</div>
+
+      <div class="flow-step">
+        <div class="flow-dot fd-r">W1</div>
+        <div class="flow-info">
+          <strong>Tuần 1 · Mindset & Research</strong>
+          <span>Onboard tư duy seller: hiểu TikTok algorithm, cách đọc Seller Center, phân tích competitor. Giao bài tập tìm 10 winning product/ngày.</span>
+        </div>
+      </div>
+      <div class="connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-dot fd-c">W2</div>
+        <div class="flow-info">
+          <strong>Tuần 2 · Design & AI Tools</strong>
+          <span>Training Midjourney prompt cho POD mockup. Tạo ảnh sản phẩm đạt tiêu chuẩn TikTok Shop US (trắng nền, hero shot, lifestyle shot).</span>
+        </div>
+      </div>
+      <div class="connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-dot fd-r">W3</div>
+        <div class="flow-info">
+          <strong>Tuần 3 · Kling AI Video</strong>
+          <span>Làm chủ Kling AI: animate ảnh tĩnh, thêm motion, hook 3 giây đầu. Mục tiêu: tự sản xuất 3 video/ngày không cần support.</span>
+        </div>
+      </div>
+      <div class="connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-dot fd-c">W4</div>
+        <div class="flow-info">
+          <strong>Tuần 4 · Upload & Ads Cơ Bản</strong>
+          <span>Tạo listing chuẩn, SEO title/description, setup TikTok Spark Ads và VSA. Theo dõi KPI: CTR, CPA, ROAS theo ngày.</span>
+        </div>
+      </div>
+      <div class="connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-dot fd-w">W5+</div>
+        <div class="flow-info">
+          <strong>Tuần 5+ · Độc Lập Vận Hành</strong>
+          <span>TTS tự research, design, upload, chạy ads. Leader review 1 lần/ngày. Scale sản phẩm winning, kill sản phẩm kém.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="result-card">
+        <div style="font-size:12px;font-weight:800;margin-bottom:16px;color:var(--t2);letter-spacing:1px;text-transform:uppercase">Kết Quả Team · G-Way Holdings</div>
+        <div class="rc-kpi-grid">
+          <div class="kpi-box">
+            <div class="kpi-num r">$264K</div>
+            <div class="kpi-lbl">Revenue · 6 tháng</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num c">4.0x</div>
+            <div class="kpi-lbl">ROI Đỉnh</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num r">6 Tuần</div>
+            <div class="kpi-lbl">TTS Độc Lập</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num c">100%</div>
+            <div class="kpi-lbl">SOP Bàn Giao</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-card">
+        <div class="flow-title">Tư Duy Leader · Hệ Thống Không Phụ Thuộc Cá Nhân</div>
+        <ul class="cs-list" style="margin-top:4px">
+          <li>Xây SOP chi tiết từng bước — TTS mới join có thể tự vận hành sau 6 tuần.</li>
+          <li>Tuyển dụng & phỏng vấn TTS — filter đúng người có growth mindset.</li>
+          <li>KPI hàng tuần rõ ràng — đo lường, review, điều chỉnh liên tục.</li>
+          <li>Bàn giao hoàn toàn hệ thống cho Leader kế tiếp — <strong style="color:var(--c)">zero dependency</strong> vào cá nhân.</li>
+          <li>Mục tiêu: scale team mà không scale sự phức tạp.</li>
+        </ul>
+      </div>
+
+      <div class="transparency">
+        <span>🔒</span>
+        <span>Tất cả số liệu trong portfolio này đều từ dữ liệu thực tế tại TikTok Seller Center, Facebook Ads Manager và tài khoản Printify. Có thể cung cấp screenshot (đã blur thông tin nhạy cảm) hoặc giải trình chi tiết trong buổi phỏng vấn.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Trần Văn Tuấn</div>
+  <div class="footer-sub">TikTok Shop Seller · AI Content · POD · Team Leader · Đà Nẵng</div>
+  <div class="footer-links">
+    <a href="tel:0945272339">📞 0945-272-339</a>
+    <a href="mailto:vantuanagency@gmail.com">✉️ vantuanagency@gmail.com</a>
+    <a href="#">📍 Đà Nẵng, Việt Nam</a>
+  </div>
+  <div class="footer-note">© 2026 Trần Văn Tuấn · Portfolio · Built with passion & AI</div>
+</footer>
+
+<!-- CHART.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const ctx = document.getElementById('revChart').getContext('2d');
+const months = ['T3','T4','T5','T6','T7','T8','T9','T10','T11','T12','T1','T2'];
+const rev = [18,22,28,35,40,48,55,20,28,36,42,50];
+const profit = [4,5.5,8,10,12,15,18,5,8,11,14,18];
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: 'Doanh Thu (K USD)',
+        data: rev,
+        backgroundColor: 'rgba(254,44,85,0.7)',
+        borderRadius: 6,
+        order: 2
+      },
+      {
+        label: 'Profit (K USD)',
+        data: profit,
+        type: 'line',
+        borderColor: '#25F4EE',
+        backgroundColor: 'rgba(37,244,238,0.08)',
+        borderWidth: 2.5,
+        pointBackgroundColor: '#25F4EE',
+        pointRadius: 4,
+        tension: 0.4,
+        fill: true,
+        order: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: 'rgba(15,15,15,0.95)',
+        titleColor: '#fff',
+        bodyColor: 'rgba(255,255,255,0.7)',
+        borderColor: 'rgba(255,255,255,0.1)',
+        borderWidth: 1,
+        callbacks: {
+          label: ctx => ' ' + ctx.dataset.label + ': $' + ctx.parsed.y + 'K'
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { color: 'rgba(255,255,255,0.45)', font: { size: 11 } }
+      },
+      y: {
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: {
+          color: 'rgba(255,255,255,0.45)',
+          font: { size: 11 },
+          callback: v => '$' + v + 'K'
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
