@@ -48,10 +48,10 @@ nav {
   color: var(--t2); text-decoration: none; transition: color .2s;
 }
 .nav-links a:hover { color: var(--c); }
-
+ 
 /* SECTIONS */
 section { padding: 100px 5vw 80px; max-width: 1100px; margin: 0 auto; }
-
+ 
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
@@ -65,7 +65,7 @@ section { padding: 100px 5vw 80px; max-width: 1100px; margin: 0 auto; }
 .hero-glow.g1 { width: 500px; height: 500px; top: -100px; right: -100px; background: rgba(254,44,85,.18); }
 .hero-glow.g2 { width: 400px; height: 400px; bottom: 0; left: -80px; background: rgba(37,244,238,.12); }
 .hero-inner { position: relative; z-index: 1; }
-
+ 
 .hero-tag {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1px solid rgba(37,244,238,.4); border-radius: 100px;
@@ -75,7 +75,7 @@ section { padding: 100px 5vw 80px; max-width: 1100px; margin: 0 auto; }
 }
 .hero-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--c); animation: pulse 1.5s infinite; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.7)} }
-
+ 
 h1.hero-name {
   font-size: clamp(42px, 7vw, 90px);
   font-weight: 900; line-height: 1.0; letter-spacing: -3px; margin-bottom: 8px;
@@ -83,13 +83,13 @@ h1.hero-name {
 .hero-name .white { color: var(--t1); }
 .hero-name .red { color: var(--r); }
 .hero-name .cyan { color: var(--c); }
-
+ 
 .hero-sub {
   font-size: clamp(14px, 2vw, 18px); color: var(--t2); font-weight: 400;
   margin-bottom: 32px; max-width: 600px;
 }
 .hero-sub strong { color: var(--t1); font-weight: 700; }
-
+ 
 /* BIG 3 */
 .big3 {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
@@ -111,13 +111,13 @@ h1.hero-name {
   font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--t3);
 }
-
+ 
 .hero-note {
   font-size: 11px; color: var(--t3); font-style: italic;
   padding-left: 16px; border-left: 2px solid rgba(37,244,238,.3);
   margin-bottom: 32px;
 }
-
+ 
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -132,7 +132,7 @@ h1.hero-name {
   background: transparent; color: var(--c);
   border: 1px solid rgba(37,244,238,.4);
 }
-
+ 
 /* SECTION HEADERS */
 .s-header { margin-bottom: 48px; }
 .s-tag {
@@ -143,7 +143,7 @@ h1.hero-name {
 .s-tag::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--r); }
 .s-title { font-size: clamp(26px, 4vw, 40px); font-weight: 900; letter-spacing: -1px; line-height: 1.15; }
 .s-desc { font-size: 14px; color: var(--t2); margin-top: 10px; max-width: 560px; }
-
+ 
 /* ── PROCESS ── */
 #process { background: none; }
 .process-grid {
@@ -171,7 +171,7 @@ h1.hero-name {
 .step-num.s2 { background: var(--card2); color: var(--c); border: 2px solid var(--c); }
 .step-num.s3 { background: var(--card2); color: var(--c); border: 2px solid var(--c); }
 .step-num.s4 { background: var(--c); color: var(--b); box-shadow: 0 0 24px rgba(37,244,238,.4); }
-
+ 
 .step-body {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 14px; padding: 20px 16px; width: 100%;
@@ -188,7 +188,7 @@ h1.hero-name {
 .tp-c { background: rgba(37,244,238,.10); color: var(--c); border: 1px solid rgba(37,244,238,.25); }
 .tp-w { background: rgba(255,255,255,.07); color: var(--t2); border: 1px solid var(--border); }
 .step-desc { font-size: 11px; color: var(--t2); line-height: 1.55; }
-
+ 
 /* ── CASE STUDIES ── */
 .case-study-wrap { display: flex; flex-direction: column; gap: 24px; }
 .cs-card {
@@ -223,7 +223,7 @@ h1.hero-name {
   color: var(--c); font-size: 9px;
 }
 .cs-list li strong { color: var(--t1); font-weight: 700; }
-
+ 
 .cs-results {
   padding: 20px 28px; background: rgba(254,44,85,.04);
   border-top: 1px solid rgba(254,44,85,.15);
@@ -235,7 +235,7 @@ h1.hero-name {
 .result-num.c { color: var(--c); }
 .result-lbl { font-size: 10px; color: var(--t3); font-weight: 600; letter-spacing: .5px; margin-top: 2px; }
 .result-note { font-size: 11px; color: var(--t3); font-style: italic; margin-left: auto; text-align: right; }
-
+ 
 /* ── CHART SECTION ── */
 .chart-wrap {
   background: var(--card); border: 1px solid var(--border);
@@ -247,7 +247,7 @@ h1.hero-name {
 .legend-row { display: flex; gap: 16px; flex-wrap: wrap; }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--t2); }
 .legend-dot { width: 8px; height: 8px; border-radius: 2px; }
-
+ 
 /* ── SKILLS GALLERY ── */
 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .skill-card {
@@ -267,7 +267,7 @@ h1.hero-name {
 .ic-c { background: rgba(37,244,238,.1); }
 .skill-card-title { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
 .skill-card-sub { font-size: 12px; color: var(--t2); margin-bottom: 14px; line-height: 1.55; }
-
+ 
 .metric-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
 .mini-stat {
   flex: 1; min-width: 80px; background: rgba(255,255,255,.04);
@@ -277,7 +277,7 @@ h1.hero-name {
 .mn.r { color: var(--r); }
 .mn.c { color: var(--c); }
 .mini-stat .ml { font-size: 9px; color: var(--t3); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
-
+ 
 /* PROMPT BLOCK */
 .prompt-block {
   background: var(--b); border: 1px solid rgba(37,244,238,.2);
@@ -287,7 +287,7 @@ h1.hero-name {
 .pb-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--c); margin-bottom: 8px; }
 .pb-text { font-size: 11px; color: rgba(255,255,255,.7); line-height: 1.6; }
 .pb-text em { color: var(--c); font-style: normal; }
-
+ 
 /* VIDEO AI MOCKUP */
 .video-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 14px; }
 .vid-mock {
@@ -311,7 +311,7 @@ h1.hero-name {
   background: rgba(0,0,0,.7); border-radius: 6px; padding: 4px 7px;
   font-size: 9px; color: var(--c); font-weight: 700; text-align: center;
 }
-
+ 
 /* ── LEADERSHIP ── */
 .leader-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .flow-card {
@@ -334,9 +334,9 @@ h1.hero-name {
 .flow-info { flex: 1; }
 .flow-info strong { font-size: 12px; font-weight: 800; display: block; margin-bottom: 2px; }
 .flow-info span { font-size: 11px; color: var(--t2); line-height: 1.5; }
-
+ 
 .connector { width: 1px; height: 12px; background: var(--border); margin: 0 0 0 16px; margin-bottom: 4px; }
-
+ 
 .result-card {
   background: linear-gradient(135deg, rgba(254,44,85,.08), rgba(37,244,238,.05));
   border: 1px solid rgba(254,44,85,.2); border-radius: 16px; padding: 24px;
@@ -350,7 +350,7 @@ h1.hero-name {
 .kpi-num.r { color: var(--r); }
 .kpi-num.c { color: var(--c); }
 .kpi-lbl { font-size: 9px; color: var(--t3); text-transform: uppercase; letter-spacing: 1.2px; }
-
+ 
 /* TRANSPARENCY NOTE */
 .transparency {
   margin-top: 20px;
@@ -359,7 +359,7 @@ h1.hero-name {
   font-size: 11px; color: rgba(37,244,238,.8);
   display: flex; gap: 10px; align-items: flex-start;
 }
-
+ 
 /* FOOTER */
 footer {
   background: var(--card); border-top: 1px solid var(--border);
@@ -376,7 +376,7 @@ footer {
 .footer-links a { font-size: 12px; color: var(--t2); text-decoration: none; font-weight: 600; }
 .footer-links a:hover { color: var(--c); }
 .footer-note { font-size: 10px; color: var(--t3); margin-top: 24px; }
-
+ 
 /* DIVIDER */
 .section-divider {
   width: 100%; height: 1px;
@@ -389,7 +389,7 @@ footer {
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">♪ TVT · PORTFOLIO</div>
@@ -400,14 +400,14 @@ footer {
     <a href="#leadership">Leadership</a>
   </div>
 </nav>
-
+ 
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section id="hero">
   <div class="hero-glow g1"></div>
   <div class="hero-glow g2"></div>
   <div class="hero-inner">
     <div class="hero-tag"><span></span> Available for new opportunities</div>
-
+ 
     <h1 class="hero-name">
       <span class="white">Trần</span><br>
       <span class="red">Văn</span> <span class="cyan">Tuấn</span>
@@ -416,7 +416,7 @@ footer {
       <strong>TikTok Shop Seller · AI-Powered Content Creator · POD Operator</strong><br>
       Seller có tư duy <strong>Idea & Tech-Driven</strong> — biến AI thành lợi thế cạnh tranh trên thị trường Mỹ.
     </p>
-
+ 
     <div class="big3">
       <div class="big3-item">
         <span class="num r">$264K</span>
@@ -431,20 +431,20 @@ footer {
         <span class="lbl">Driven · ROI 4x</span>
       </div>
     </div>
-
+ 
     <p class="hero-note">
       ✦ Dữ liệu thực tế từ tài khoản Seller Center — có thể đối soát khi phỏng vấn.
     </p>
-
+ 
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:vantuanagency@gmail.com">Liên hệ ngay</a>
       <a class="btn btn-outline" href="#casestudy">Xem Case Study ↓</a>
     </div>
   </div>
 </section>
-
+ 
 <div class="section-divider"></div>
-
+ 
 <!-- ═══════════════════════ PROCESS ═══════════════════════ -->
 <section id="process">
   <div class="s-header">
@@ -452,7 +452,7 @@ footer {
     <h2 class="s-title">AI-Powered Workflow</h2>
     <p class="s-desc">Không chỉ làm theo bản năng — mỗi đơn hàng đều đi qua một quy trình tối ưu, ứng dụng AI tại mọi khâu.</p>
   </div>
-
+ 
   <div class="process-grid">
     <div class="step-card">
       <div class="step-num s1">01</div>
@@ -466,7 +466,7 @@ footer {
         <div class="step-desc">Phân tích trending hashtags, xem xét competitor ads, đánh giá demand thị trường Mỹ qua TikTok Shop US dashboard.</div>
       </div>
     </div>
-
+ 
     <div class="step-card">
       <div class="step-num s2">02</div>
       <div class="step-body">
@@ -479,7 +479,7 @@ footer {
         <div class="step-desc">Dùng Midjourney gen ảnh mockup sản phẩm POD độc bản. ChatGPT viết copy & tối ưu listing. Canva tạo banner gian hàng.</div>
       </div>
     </div>
-
+ 
     <div class="step-card">
       <div class="step-num s3">03</div>
       <div class="step-body">
@@ -492,7 +492,7 @@ footer {
         <div class="step-desc">Kling AI biến ảnh tĩnh thành video viral. ElevenLabs gen voiceover chuẩn giọng Mỹ. CapCut mix sub, hiệu ứng, hook 3 giây đầu.</div>
       </div>
     </div>
-
+ 
     <div class="step-card">
       <div class="step-num s4">04</div>
       <div class="step-body">
@@ -507,9 +507,9 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <div class="section-divider"></div>
-
+ 
 <!-- ═══════════════════════ CASE STUDIES ═══════════════════════ -->
 <section id="casestudy">
   <div class="s-header">
@@ -517,9 +517,9 @@ footer {
     <h2 class="s-title">Case Study Thực Chiến</h2>
     <p class="s-desc">Phân tích chi tiết theo mô hình S-T-A-R từ các dự án thực tế đã triển khai.</p>
   </div>
-
+ 
   <div class="case-study-wrap">
-
+ 
     <!-- CASE 1 -->
     <div class="cs-card">
       <div class="cs-head">
@@ -581,7 +581,7 @@ footer {
         <div class="result-note">✦ Dữ liệu từ TikTok Seller Center<br>— đối soát được khi phỏng vấn</div>
       </div>
     </div>
-
+ 
     <!-- CASE 2 -->
     <div class="cs-card">
       <div class="cs-head">
@@ -640,9 +640,9 @@ footer {
         <div class="result-note">✦ AI Content: 0 USD production cost<br>vs $300–500 thuê video editor</div>
       </div>
     </div>
-
+ 
   </div>
-
+ 
   <!-- REVENUE CHART -->
   <div class="chart-wrap" style="margin-top:24px">
     <div class="chart-header">
@@ -660,9 +660,9 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <div class="section-divider"></div>
-
+ 
 <!-- ═══════════════════════ SKILLS GALLERY ═══════════════════════ -->
 <section id="skills">
   <div class="s-header">
@@ -670,9 +670,9 @@ footer {
     <h2 class="s-title">Năng Lực & Công Nghệ</h2>
     <p class="s-desc">Từ AI Content đến Ads Optimization — không outsource, tự cân toàn bộ.</p>
   </div>
-
+ 
   <div class="skills-grid">
-
+ 
     <!-- AI VIDEO -->
     <div class="skill-card">
       <div class="skill-card-icon ic-r">🎬</div>
@@ -709,7 +709,7 @@ footer {
         <div class="mini-stat"><div class="mn r">3.8%</div><div class="ml">CTR Max</div></div>
       </div>
     </div>
-
+ 
     <!-- PROMPTS -->
     <div class="skill-card">
       <div class="skill-card-icon ic-c">🤖</div>
@@ -731,7 +731,7 @@ footer {
         <div class="mini-stat"><div class="mn c">2x</div><div class="ml">Speed</div></div>
       </div>
     </div>
-
+ 
     <!-- ADS -->
     <div class="skill-card">
       <div class="skill-card-icon ic-r">🎯</div>
@@ -776,7 +776,7 @@ footer {
         <div class="mini-stat"><div class="mn r">3Y+</div><div class="ml">Kinh Nghiệm</div></div>
       </div>
     </div>
-
+ 
     <!-- POD OPS -->
     <div class="skill-card">
       <div class="skill-card-icon ic-c">📦</div>
@@ -806,12 +806,12 @@ footer {
         <div class="mini-stat"><div class="mn c">$20</div><div class="ml">AOV</div></div>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <div class="section-divider"></div>
-
+ 
 <!-- ═══════════════════════ LEADERSHIP ═══════════════════════ -->
 <section id="leadership">
   <div class="s-header">
@@ -819,12 +819,12 @@ footer {
     <h2 class="s-title">Leadership & Team Building</h2>
     <p class="s-desc">Không chỉ tự mình làm giỏi — xây được hệ thống để team cũng làm được.</p>
   </div>
-
+ 
   <div class="leader-grid">
     <!-- FLOW -->
     <div class="flow-card">
       <div class="flow-title">SOP Đào Tạo TTS TikTok Shop</div>
-
+ 
       <div class="flow-step">
         <div class="flow-dot fd-r">W1</div>
         <div class="flow-info">
@@ -833,7 +833,7 @@ footer {
         </div>
       </div>
       <div class="connector"></div>
-
+ 
       <div class="flow-step">
         <div class="flow-dot fd-c">W2</div>
         <div class="flow-info">
@@ -842,7 +842,7 @@ footer {
         </div>
       </div>
       <div class="connector"></div>
-
+ 
       <div class="flow-step">
         <div class="flow-dot fd-r">W3</div>
         <div class="flow-info">
@@ -851,7 +851,7 @@ footer {
         </div>
       </div>
       <div class="connector"></div>
-
+ 
       <div class="flow-step">
         <div class="flow-dot fd-c">W4</div>
         <div class="flow-info">
@@ -860,7 +860,7 @@ footer {
         </div>
       </div>
       <div class="connector"></div>
-
+ 
       <div class="flow-step">
         <div class="flow-dot fd-w">W5+</div>
         <div class="flow-info">
@@ -869,7 +869,7 @@ footer {
         </div>
       </div>
     </div>
-
+ 
     <!-- RESULTS -->
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="result-card">
@@ -893,7 +893,7 @@ footer {
           </div>
         </div>
       </div>
-
+ 
       <div class="flow-card">
         <div class="flow-title">Tư Duy Leader · Hệ Thống Không Phụ Thuộc Cá Nhân</div>
         <ul class="cs-list" style="margin-top:4px">
@@ -904,7 +904,7 @@ footer {
           <li>Mục tiêu: scale team mà không scale sự phức tạp.</li>
         </ul>
       </div>
-
+ 
       <div class="transparency">
         <span>🔒</span>
         <span>Tất cả số liệu trong portfolio này đều từ dữ liệu thực tế tại TikTok Seller Center, Facebook Ads Manager và tài khoản Printify. Có thể cung cấp screenshot (đã blur thông tin nhạy cảm) hoặc giải trình chi tiết trong buổi phỏng vấn.</span>
@@ -912,7 +912,7 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Trần Văn Tuấn</div>
@@ -924,7 +924,7 @@ footer {
   </div>
   <div class="footer-note">© 2026 Trần Văn Tuấn · Portfolio · Built with passion & AI</div>
 </footer>
-
+ 
 <!-- CHART.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
@@ -932,7 +932,7 @@ const ctx = document.getElementById('revChart').getContext('2d');
 const months = ['T3','T4','T5','T6','T7','T8','T9','T10','T11','T12','T1','T2'];
 const rev = [18,22,28,35,40,48,55,20,28,36,42,50];
 const profit = [4,5.5,8,10,12,15,18,5,8,11,14,18];
-
+ 
 new Chart(ctx, {
   type: 'bar',
   data: {
@@ -993,6 +993,6 @@ new Chart(ctx, {
   }
 });
 </script>
-
+ 
 </body>
 </html>
